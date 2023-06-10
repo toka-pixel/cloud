@@ -1,0 +1,20 @@
+@import "../../styles/common";
+
+.support {
+  margin: 0 50px;
+  .logoFilter {
+    @include flex($justify: space-between);
+    margin-top: 10px;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      p {
+        font-size: 24px;
+        font-weight: 400;
+        color: $sky;
+        padding-right: 5px;
+      }
+    }
+  }
+}

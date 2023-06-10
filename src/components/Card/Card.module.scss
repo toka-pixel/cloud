@@ -1,0 +1,29 @@
+@import "../../styles/common";
+
+.card {
+  background-color: $white;
+  border-radius: $border-radius;
+  margin-bottom: 10px;
+  padding-bottom: 1px;
+  .mainImg {
+    padding: 30px;
+    width: 100%;
+  }
+  .content {
+    height: 140px;
+    color: $white;
+    margin: 4px;
+    border-radius: $border-radius;
+    padding: 1px 8px;
+    background-color: $green;
+ 
+  }
+  .priceOptions {
+    @include flex($justify: space-between, $align: baseline);
+    .options {
+     span{
+       background-color: $black_1;
+     }
+    }
+  }
+}

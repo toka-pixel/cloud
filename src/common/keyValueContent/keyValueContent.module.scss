@@ -1,0 +1,12 @@
+@import "../../styles/common";
+
+.keyValueContent {
+  font-size: 12px;
+  @include flex($justify: space-between);
+  .key {
+    color: $gray_1;
+  }
+  .value {
+    color: $sky;
+  }
+}

@@ -1,0 +1,48 @@
+@import "../../styles/common";
+
+.cartMenu {
+  .box {
+    font-size: 20px;
+    background-color: $gray_2;
+    padding: 4px;
+    border-radius: 5px;
+    color: $gray_1;
+    padding-top: 9px;
+    margin-right: 11px;
+  }
+  .leftSide {
+    display: flex;
+  }
+  .title {
+    display: block;
+    color: $blue;
+  }
+  .price {
+    color: $gray_1;
+  }
+  .delete {
+    color: $red;
+  }
+}
+
+.moreInfo {
+  font-size: 10px;
+  .gift {
+    background-color: $yellow_3;
+    padding: 4px;
+    margin-bottom: 5px;
+  }
+  span {
+    margin-left: 6px;
+  }
+  .infoIcon {
+    background-color: $sky;
+    color: $white;
+    border-radius: 25px;
+    padding: 2px;
+  }
+  .info {
+    background-color: $sky_2;
+    padding: 4px;
+  }
+}
