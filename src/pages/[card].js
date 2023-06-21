@@ -5,7 +5,7 @@ const Card = () => {
   const { cardTitle } = router.query;
 
   return (
-    <div>
+    <div className="container">
       <h2>{cardTitle}</h2>
     </div>
   );

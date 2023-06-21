@@ -7,7 +7,7 @@ import styles from "./GetSupport.module.scss";
 
 const GetSupport = () => {
   return (
-    <div className={styles.support}>
+    <div className={`${styles.support} container`}>
       <div className={styles.logoFilter}>
         <div className={styles.logo}>
           <p>Get Support</p>
@@ -28,6 +28,29 @@ const GetSupport = () => {
           </Col>
         ))}
       </Row>
+
+      <div className={styles.setting}>
+        <>
+          <Image
+            src="/imgs/home/setting_1.png"
+            width={17}
+            height={17}
+            alt="setting"
+          />
+          <span className={styles.title}>Remaining DTSUs: </span>
+          <span className={styles.price}>200</span>
+        </>
+        <>
+          <Image
+            src="/imgs/home/setting_2.png"
+            width={17}
+            height={17}
+            alt="setting"
+          />
+          <span className={styles.title}>Consumed DTSUs: </span>
+          <span className={styles.price}>350</span>
+        </>
+      </div>
     </div>
   );
 };

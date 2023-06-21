@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "apple",
+    "price":100,
+    "status":"high"
+  },
+  {
+    "id": 2,
+    "title": "lenovo",
+    "price":200,
+    "status":"low"
+  },
+  {
+    "id": 3,
+    "title": "hp",
+    "price":300,
+    "status":"medium"
+  }
+]

@@ -1,48 +1,25 @@
 @import "../../styles/common";
 
-.cartMenu {
-  .box {
-    font-size: 20px;
-    background-color: $gray_2;
-    padding: 4px;
-    border-radius: 5px;
-    color: $gray_1;
-    padding-top: 9px;
-    margin-right: 11px;
+.quantity {
+  display: flex;
+  padding-left: 20px;
+  .value{
+    padding-top: 4px;
+    padding-right: 9px;
   }
-  .leftSide {
-    display: flex;
-  }
-  .title {
+  .action {
     display: block;
-    color: $blue;
-  }
-  .price {
-    color: $gray_1;
-  }
-  .delete {
-    color: $red;
+    cursor: pointer;
   }
 }
 
-.moreInfo {
-  font-size: 10px;
-  .gift {
-    background-color: $yellow_3;
-    padding: 4px;
-    margin-bottom: 5px;
-  }
-  span {
-    margin-left: 6px;
-  }
-  .infoIcon {
-    background-color: $sky;
-    color: $white;
-    border-radius: 25px;
-    padding: 2px;
-  }
-  .info {
-    background-color: $sky_2;
-    padding: 4px;
-  }
+.emptyCart{
+    text-align: center;
+    padding-top: 129px;
+    p:first-of-type{
+    font-weight: 600;
+    }
+    p:last-of-type{
+   color: $gray_1;
+    }
 }

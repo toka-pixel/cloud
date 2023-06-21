@@ -5,7 +5,8 @@
     "title": "Customer Engagement",
     "description": "Get your own mobile app for industry specific",
     "price": 100,
-    "color":"blue"
+    "color":"blue",
+    "quantity":0
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "title": "Actionable Insighets",
     "description": "Create Dashboards ",
     "price": 100,
-    "color":"green"
+    "color":"green",
+    "quantity":0
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "title": "Employees Productivity",
     "description": "KPI Builder , Create Oracle Requests",
     "price": 100,
-    "color":"red"
+    "color":"red",
+    "quantity":0
   },
   {
     "id": 4,
@@ -29,6 +32,7 @@
     "title": "Operations Excellence",
     "description": "Tenant/lessee Managment",
     "price": 100,
-    "color":"yellow_2"
+    "color":"yellow_2",
+    "quantity":0
   }
 ]

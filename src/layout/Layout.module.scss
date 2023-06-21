@@ -4,7 +4,6 @@
   background-color: $white;
   .header {
     background-color: $gray;
-    // padding: 15px 0;
     line-height: 0;
     padding-top: 0px;
     height: auto;
@@ -14,5 +13,21 @@
     background-image: url(/imgs/home/Rectangle.png),
       linear-gradient(to left, transparent 50%, #97e0f3 0% 0%, #ffffff 50% 100%);
     background-repeat: no-repeat;
+    & {
+      @media (max-width: 900px) {
+        background-image: none;
+      }
+    }
+  }
+  .footer {
+    text-align: center;
+    color: $gray_1;
+    .questions {
+      font-weight: 700;
+    }
+    .skyed {
+      color: $sky;
+      padding-left: 2px;
+    }
   }
 }

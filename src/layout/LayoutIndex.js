@@ -11,7 +11,14 @@ const LayoutIndex = (props) => {
         <HeaderContent />
       </Header>
       <Content className={styles.content}>{props.children}</Content>
-      <Footer>footer</Footer>
+      <Footer className={styles.footer}>
+        <span className={styles.questions}>Got questions? </span>Take a look at
+        our
+        <span className={styles.skyed}>FAQs</span> talk to us on Twitter
+        <span className={styles.skyed}>@icloudready</span>
+        or send an email to
+        <span className={styles.skyed}>team@icloud-ready.com</span>
+      </Footer>
     </Layout>
   );
 };

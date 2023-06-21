@@ -1,11 +1,11 @@
 import Image from "next/image";
-import styles from './CartMenu.module.scss'
+
 
 import { InfoOutlined } from "@ant-design/icons";
 const MoreInfo = () => {
   return (
-    <div className={styles.moreInfo}>
-      <div className={styles.gift}>
+    <div className={'moreInfo'}>
+      <div className={'gift'}>
         <Image
           src="/imgs/home/gift-box.png"
           width={15}
@@ -17,8 +17,8 @@ const MoreInfo = () => {
         </span>
       </div>
 
-      <div className={styles.info}>
-        <InfoOutlined  className={styles.infoIcon} />
+      <div className={'info'}>
+        <InfoOutlined  className={'infoIcon'} />
         <span>
           Some requests can take a week or moreto be delivered and may be
           subject to dependency resolutions related to your

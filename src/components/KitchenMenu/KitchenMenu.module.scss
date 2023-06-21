@@ -1,0 +1,20 @@
+@import "../../styles/common";
+
+.high {
+  background-color: $red_1;
+  .highDot {
+    background: $red !important;
+  }
+}
+.medium {
+  background: $yellow_2;
+  .mediumDot {
+    background: $yellow;
+  }
+}
+.low {
+  background: $sky_2;
+  .lowDot {
+    background: $sky;
+  }
+}

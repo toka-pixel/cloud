@@ -1,7 +1,6 @@
 @import "../../styles/common";
 
 .support {
-  margin: 0 50px;
   .logoFilter {
     @include flex($justify: space-between);
     margin-top: 10px;
@@ -15,6 +14,29 @@
         color: $sky;
         padding-right: 5px;
       }
+    }
+  }
+
+  .a {
+    .content:nth-of-type(1) {
+      background-color: $green;
+    }
+  }
+
+  .setting {
+    @include flex($justify: flex-end);
+    padding: 26px 0;
+    color: white;
+    &{
+      @media (max-width:900px) {
+        color: $black;
+      }
+    }
+    .price {
+      padding: 0 14px;
+    }
+    .title {
+      padding: 0 2px 0 4px;
     }
   }
 }

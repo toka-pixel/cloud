@@ -1,18 +1,18 @@
-import { useState } from "react";
-import { Drawer,  Row, Col, Divider,InputNumber  } from "antd";
-import {
-  ShoppingCartOutlined,
-  BoxPlotOutlined,
-  DeleteOutlined,
-} from "@ant-design/icons";
-import data from "./data.json";
+import React, { useState, useContext } from "react";
+import { Drawer, Divider } from "antd";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 import KeyValueContent from "../../common/keyValueContent/keyValueContent";
 import SubmitButton from "@/common/SubmitButton/SubmitButton";
-import MoreInfo from "./MoreInfo";
+import MoreInfo from "../MoreInfo/MoreInfo";
+import Products from "./Products";
+import Image from "next/image";
+import CartContext from "../../context/CartContext";
 import styles from "./CartMenu.module.scss";
 
 const CartMenu = () => {
   const [open, setOpen] = useState(false);
+
+  const { cartItems, totalPrice, totalQuantity } = useContext(CartContext);
 
   const showDrawer = () => {
     setOpen(true);
@@ -28,7 +28,7 @@ const CartMenu = () => {
           onClick={showDrawer}
           className={"backgroundIcon"}
         />
-        <span className={"count"}>7</span>
+        <span className={"count"}>{totalQuantity}</span>
       </p>
 
       <Drawer
@@ -39,50 +39,42 @@ const CartMenu = () => {
         open={open}
         style={{ zIndex: 50000 }}
         key="right"
-        width={350}
-        className={styles.cartMenu}
+        width={400}
+        className={"menu"}
       >
-        <Row>
-          <Col span={12}>Product</Col>
-          <Col span={9}>Qty</Col>
-          <Col span={1}>Remove</Col>
-        </Row>
-        <Divider />
+        {cartItems.length > 0 ? (
+          <>
+            <Products />
 
-        {data.map((item, index) => (
-          <div key={index}>
-            <Row>
-              <Col span={12}>
-                <div className={styles.leftSide}>
-                  <BoxPlotOutlined className={styles.box} />
-                  <span>
-                    <span className={styles.title}>{item.title}</span>
-                    <span className={styles.price}>{item.price}</span>
-                  </span>
-                </div>
-              </Col>
-              <Col span={9}><InputNumber /></Col>
-              <Col span={1}>
-                <DeleteOutlined className={styles.delete} />
-              </Col>
-            </Row>
+            <KeyValueContent text="Subtotal" value={`${totalPrice} DTSUs`} />
+            <KeyValueContent
+              text="New Payment"
+              value="No, Inclusive in your package"
+            />
             <Divider />
+            <KeyValueContent
+              text="Total Units Consumed"
+              value={`${totalPrice} DTSUs`}
+            />
+            <br />
+
+            <SubmitButton text="Checkout" skyBackground={true} />
+
+            <SubmitButton text="Back to Run Information" />
+            <MoreInfo />
+          </>
+        ) : (
+          <div className={styles.emptyCart}>
+            <Image
+              src={`/imgs/home/cart.png`}
+              width={50}
+              height={50}
+              alt={"emptyCart"}
+            />
+            <p>Your run cart is empty!</p>
+            <p>start add your requests here</p>
           </div>
-        ))}
-
-        <KeyValueContent text="Subtotal" value="1.00 DTSUs" />
-        <KeyValueContent
-          text="New Payment"
-          value="No, Inclusive in your package"
-        />
-        <Divider />
-        <KeyValueContent text="Total Units Consumed" value="1.00 DTSUs" />
-        <br />
-
-        <SubmitButton text="Checkout" skyBackground={true} />
-
-        <SubmitButton text="Back to Run Information" />
-      <MoreInfo />
+        )}
       </Drawer>
     </div>
   );
