@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {message} from 'antd'
+import { message } from "antd";
 import { PlusOutlined, FundViewOutlined } from "@ant-design/icons";
 import CartContext from "../../context/CartContext";
 import styles from "./Card.module.scss";
@@ -15,7 +15,7 @@ const Card = (props) => {
 
   const handleClick = (card) => {
     addItem(card);
-    message.success('add item successfully')
+    message.success("add item successfully");
   };
 
   return (
@@ -42,7 +42,14 @@ const Card = (props) => {
         <div className={styles.priceOptions}>
           <label>{price} DTSU*</label>
           <label className={styles.options}>
-            <FundViewOutlined className={`backgroundIcon`} />
+            <Link
+              href={{
+                pathname: "/card",
+                query: { cardTitle: card.title },
+              }}
+            >
+              <FundViewOutlined className={`backgroundIcon`} />
+            </Link>
             <PlusOutlined
               onClick={() => handleClick(card)}
               className={`backgroundIcon`}

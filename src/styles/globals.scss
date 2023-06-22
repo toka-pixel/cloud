@@ -11,6 +11,7 @@ body {
   margin-left: 5px;
   border-radius: 50px;
   background-color: $sky_2;
+
 }
 
 .action {
@@ -95,6 +96,9 @@ body {
   }
 }
 
+a{
+  color: $white;
+}
 .container {
   margin: 0 50px;
 }

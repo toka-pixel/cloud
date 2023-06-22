@@ -6,6 +6,7 @@ import SubmitButton from "@/common/SubmitButton/SubmitButton";
 import MoreInfo from "../MoreInfo/MoreInfo";
 import data from "./data.json";
 import { BoxPlotOutlined, CloudDownloadOutlined } from "@ant-design/icons";
+
 import styles from "./KitchenMenu.module.scss";
 
 const KitchenMenu = () => {
@@ -18,16 +19,16 @@ const KitchenMenu = () => {
     setOpen(false);
   };
 
-  const handleStatus=(value)=>{
-    switch(value){
-      case 'high':
-        return 'highDot';
-        case 'low':
-        return 'lowDot';
-        case 'medium':
-        return 'mediumDot';
+  const handleStatus = (value) => {
+    switch (value) {
+      case "high":
+        return "highDot";
+      case "low":
+        return "lowDot";
+      case "medium":
+        return "mediumDot";
     }
-  }
+  };
 
   return (
     <div>
@@ -68,7 +69,9 @@ const KitchenMenu = () => {
               </Col>
               <Col span={9}>
                 <span className={`status ${styles[item.status]}`}>
-                  <span className={`dot ${styles[handleStatus(item.status)]}`}></span>
+                  <span
+                    className={`dot ${styles[handleStatus(item.status)]}`}
+                  ></span>
                 </span>
               </Col>
               <Col span={1}>

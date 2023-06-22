@@ -1,5 +1,5 @@
 import React from "react";
-import {  Row, Col, Divider } from "antd";
+import { Row, Col, Divider, message } from "antd";
 import {
   BoxPlotOutlined,
   DeleteOutlined,
@@ -23,6 +23,7 @@ const Products = () => {
 
   const handleRemove = (item) => {
     removeItem(item);
+    message.warning("remove item");
   };
 
   return (

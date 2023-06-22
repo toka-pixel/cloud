@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Drawer, Divider } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import KeyValueContent from "../../common/keyValueContent/keyValueContent";
@@ -10,33 +10,30 @@ import CartContext from "../../context/CartContext";
 import styles from "./CartMenu.module.scss";
 
 const CartMenu = () => {
-  const [open, setOpen] = useState(false);
-
-  const { cartItems, totalPrice, totalQuantity } = useContext(CartContext);
-
-  const showDrawer = () => {
-    setOpen(true);
-  };
-  const onClose = () => {
-    setOpen(false);
-  };
+  const {
+    toggleCartMenu,
+    cartMenuStatus,
+    cartItems,
+    getTotalQuantity,
+    getTotalPrice,
+  } = useContext(CartContext);
 
   return (
     <div>
       <p className={"action"}>
         <ShoppingCartOutlined
-          onClick={showDrawer}
+          onClick={() => toggleCartMenu(true)}
           className={"backgroundIcon"}
         />
-        <span className={"count"}>{totalQuantity}</span>
+        <span className={"count"}>{getTotalQuantity()}</span>
       </p>
 
       <Drawer
         title="Cart Menu"
         placement="right"
         closable={true}
-        onClose={onClose}
-        open={open}
+        onClose={() => toggleCartMenu(false)}
+        open={cartMenuStatus}
         style={{ zIndex: 50000 }}
         key="right"
         width={400}
@@ -46,7 +43,10 @@ const CartMenu = () => {
           <>
             <Products />
 
-            <KeyValueContent text="Subtotal" value={`${totalPrice} DTSUs`} />
+            <KeyValueContent
+              text="Subtotal"
+              value={`${getTotalPrice()} DTSUs`}
+            />
             <KeyValueContent
               text="New Payment"
               value="No, Inclusive in your package"
@@ -54,7 +54,7 @@ const CartMenu = () => {
             <Divider />
             <KeyValueContent
               text="Total Units Consumed"
-              value={`${totalPrice} DTSUs`}
+              value={`${getTotalPrice()} DTSUs`}
             />
             <br />
 
