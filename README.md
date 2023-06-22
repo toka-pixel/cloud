@@ -41,5 +41,9 @@ link: https://cloud-teal-delta.vercel.app/
 
 ## Description
 user can add item to cart menu , decrease quantity of item and remove it.
+
 in header , user see the quantity of items exist in cart menu.
+
 in cart menu , there is  total price of items.
+
+user can click on the image of each card which will open a page with a message with the name of the column.
